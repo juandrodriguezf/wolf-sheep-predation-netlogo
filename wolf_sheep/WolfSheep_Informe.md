@@ -120,7 +120,7 @@ Además, `ticks` mezcla dos desenlaces que el experimento final no registra por 
 
 ### Gráfica: Curvas de evolución temporal de `count sheep` por valor de `initial-number-sheep`
 
-Las gráficas en `WolfSheep_Evolutivo.ipynb` muestran el promedio de ovejas vivas en cada tick para cada valor inicial. El promedio se calcula solo con las corridas que siguen activas en ese tick.
+Las gráficas en `WolfSheep_Evolutivo.ipynb` muestran el promedio de ovejas vivas en cada tick para cada valor inicial. El promedio se calcula solo con las corridas que siguen activas en ese tick. Para describir la forma de las curvas se usan medianas calculadas a partir del CSV, porque el promedio está dominado por valores extremos.
 
 ### Interpretación
 
