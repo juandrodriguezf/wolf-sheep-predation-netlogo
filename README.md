@@ -8,7 +8,17 @@ en **R** con `tidyverse` y `ggplot2` desde notebooks de Colab.
 **Autor:** Juan David Rodríguez Franco
 **Repositorio:** https://github.com/juandrodriguezf/wolf-sheep-predation-netlogo
 
+<p>
+  <img alt="NetLogo 7.0.4" src="https://img.shields.io/badge/NetLogo-7.0.4-4C9F70">
+  <img alt="R 4.6.0" src="https://img.shields.io/badge/R-4.6.0-276DC3?logo=r&logoColor=white">
+  <img alt="Colab R" src="https://img.shields.io/badge/Colab-R-F9AB00">
+  <img alt="Licencia MIT" src="https://img.shields.io/badge/licencia-MIT-green">
+  <img alt="Datos CC BY 4.0" src="https://img.shields.io/badge/datos-CC%20BY%204.0-lightgrey">
+</p>
+
 ---
+
+**Contenido:** [Pregunta](#pregunta-experimental) · [Modelo](#modelo) · [Repositorio](#contenido-del-repositorio) · [Diseño](#diseño-experimental) · [Resultados](#resultados-principales) · [Figuras](#resultados-visuales) · [Datos](#datos) · [Reproducción](#cómo-reproducir) · [Licencia](#licencia-y-atribución) · [Citación](#cómo-citar) · [Material](#material-complementario)
 
 ## Pregunta experimental
 
@@ -41,6 +51,8 @@ wolf_sheep/
 ```
 
 El video de sustentación y el material de referencia del curso no se incluyen en el repositorio.
+
+Los experimentos de BehaviorSpace no están guardados dentro del `.nlogox`: se distribuyen como XML importable en [`docs/experimentos/wolfsheep_experiments.xml`](docs/experimentos/wolfsheep_experiments.xml). La configuración exacta está en [`docs/reproduccion.md`](docs/reproduccion.md).
 
 ---
 
@@ -98,6 +110,35 @@ celdas de conclusión de cada notebook.
 
 ---
 
+## Resultados visuales
+
+<p align="center">
+  <img src="docs/figuras/ticks-boxplot.png" alt="Boxplot de ticks por número inicial de ovejas" width="640">
+</p>
+
+*Distribución de `ticks` por valor inicial de ovejas. Cada punto es una corrida; la caja resume la mediana y los cuartiles.*
+
+<p align="center">
+  <img src="docs/figuras/evolucion-facetas.png" alt="Dinámica temporal de la población de ovejas por número inicial" width="640">
+</p>
+
+*Promedio de `count sheep` por paso para cada valor de `initial-number-sheep`. La escala temporal es `[step]`.*
+
+También están disponibles la [dispersión completa](docs/figuras/ticks-jitter.png) y las [líneas sin facetas](docs/figuras/evolucion-lineas.png).
+
+---
+
+## Datos
+
+| Archivo | Filas de datos | Corridas | Métrica |
+| --- | ---: | ---: | --- |
+| [`wolfsheep_final.csv`](wolf_sheep/wolfsheep_final.csv) | 296 | 296 | `ticks` |
+| [`wolfsheep_evol.csv`](wolf_sheep/wolfsheep_evol.csv) | 116.469 | 300 | `count sheep` |
+
+El CSV final conserva 296 de las 300 corridas planificadas (faltan 19, 58, 71 y 271). El diccionario de columnas, los conteos por grupo y las condiciones de parada están en [`docs/datos.md`](docs/datos.md).
+
+---
+
 ## Cómo reproducir
 
 1. Abrir el modelo en NetLogo 7.0.4.
@@ -127,6 +168,10 @@ Experimento evolutivo (wolfsheep_evol)
   Stop condition: natural del modelo
 ```
 
+La configuración exacta, incluyendo `exitCondition ticks >= 1000`, está en [`docs/reproduccion.md`](docs/reproduccion.md). También puedes importar los experimentos desde [`docs/experimentos/wolfsheep_experiments.xml`](docs/experimentos/wolfsheep_experiments.xml) en lugar de crearlos a mano.
+
+`wolfsheep_final` registra solo `ticks`; `wolfsheep_evol` registra `count sheep` en cada paso y usa `[step]` como tiempo.
+
 3. Exportar los resultados como CSV de tabla y reemplazar los archivos de `wolf_sheep/`.
 4. Abrir los notebooks en Colab (kernel R) y ejecutar todas las celdas.
 
@@ -134,3 +179,77 @@ Experimento evolutivo (wolfsheep_evol)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/juandrodriguezf/wolf-sheep-predation-netlogo/blob/master/wolf_sheep/WolfSheep_Evolutivo.ipynb)
 
 Los notebooks leen los CSV directamente desde la rama `master` mediante URLs raw de GitHub.
+
+---
+
+## Reproducibilidad y experimentos
+
+La guía completa, los comandos de NetLogo headless y las limitaciones están en [`docs/reproduccion.md`](docs/reproduccion.md). El entorno R se instala con [`requirements.R`](requirements.R).
+
+- [`docs/experimentos/wolfsheep_experiments.xml`](docs/experimentos/wolfsheep_experiments.xml) contiene los dos experimentos listos para importar en BehaviorSpace.
+- `wolfsheep_final`: 30 repeticiones, métrica `ticks`, sin registro por paso.
+- `wolfsheep_evol`: 30 repeticiones, métrica `count sheep`, registro en cada paso.
+- Ambos varían `initial-number-sheep` de 20 a 200 en pasos de 20 y usan `exitCondition ticks >= 1000`.
+- Los experimentos originales no fijaron `random-seed`; por eso se reproduce la metodología, no cada valor numérico.
+
+---
+
+## Licencia y atribución
+
+- Código y notebooks originales: [MIT](LICENSE).
+- Datos, figuras e informe originales: [CC BY 4.0](LICENSE-DATA).
+- Modelo NetLogo `Wolf Sheep Predation`: Copyright 1997 Uri Wilensky, [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/). No se relicencia bajo MIT ni CC BY 4.0.
+- NetLogo: software libre para uso no comercial bajo GNU GPL.
+
+Consulta [`NOTICE.md`](NOTICE.md) para la atribución completa y las citas del modelo.
+
+---
+
+## Cómo citar
+
+Los metadatos de citación están en [`CITATION.cff`](CITATION.cff).
+
+```bibtex
+@software{rodriguez_franco_wolf_sheep_2026,
+  author  = {Rodríguez Franco, Juan David},
+  title   = {Wolf Sheep Predation: efecto del número inicial de ovejas en la dinámica depredador-presa},
+  year    = {2026},
+  version = {1.0.0},
+  url     = {https://github.com/juandrodriguezf/wolf-sheep-predation-netlogo},
+  license = {MIT}
+}
+```
+
+Si reutilizas el modelo original, cita también:
+
+> Wilensky, U. (1997). NetLogo Wolf Sheep Predation model. http://ccl.northwestern.edu/netlogo/models/WolfSheepPredation. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.
+
+---
+
+## Material complementario
+
+```text
+docs/
+  datos.md
+  reproduccion.md
+  experimentos/wolfsheep_experiments.xml
+  figuras/
+    ticks-jitter.png
+    ticks-boxplot.png
+    evolucion-lineas.png
+    evolucion-facetas.png
+LICENSE
+LICENSE-DATA
+NOTICE.md
+CITATION.cff
+requirements.R
+```
+
+- [Informe completo](wolf_sheep/WolfSheep_Informe.md)
+- [Diccionario de datos](docs/datos.md)
+- [Guía de reproducción](docs/reproduccion.md)
+- [Experimentos importables](docs/experimentos/wolfsheep_experiments.xml)
+- [Licencia del código](LICENSE)
+- [Licencia de datos](LICENSE-DATA)
+- [Atribución y licencias de terceros](NOTICE.md)
+- [Metadatos de citación](CITATION.cff)
