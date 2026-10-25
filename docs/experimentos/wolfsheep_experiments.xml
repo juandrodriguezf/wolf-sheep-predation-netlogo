@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE experiments SYSTEM "behaviorspace.dtd">
+<experiments>
+  <experiment name="wolfsheep_final" repetitions="30" sequentialRunOrder="false" runMetricsEveryStep="false">
+    <preExperiment>reset-timer</preExperiment>
+    <setup>setup</setup>
+    <go>go</go>
+    <exitCondition><![CDATA[ticks >= 1000]]></exitCondition>
+    <metric>ticks</metric>
+    <steppedValueSet variable="initial-number-sheep" first="20" step="20" last="200"/>
+  </experiment>
+  <experiment name="wolfsheep_evol" repetitions="30" sequentialRunOrder="false" runMetricsEveryStep="true">
+    <preExperiment>reset-timer</preExperiment>
+    <setup>setup</setup>
+    <go>go</go>
+    <exitCondition><![CDATA[ticks >= 1000]]></exitCondition>
+    <metric>count sheep</metric>
+    <steppedValueSet variable="initial-number-sheep" first="20" step="20" last="200"/>
+  </experiment>
+</experiments>
