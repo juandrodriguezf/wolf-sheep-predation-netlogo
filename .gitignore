@@ -1,0 +1,12 @@
+# Archivos locales del proyecto
+proyecto_Tcom_juanRodriguez.mp4
+referencias/
+
+# Notebooks y R
+.ipynb_checkpoints/
+.Rproj.user/
+.Rhistory
+
+# Sistema
+Thumbs.db
+.DS_Store
