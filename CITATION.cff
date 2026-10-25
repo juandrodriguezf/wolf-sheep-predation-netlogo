@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "Si utilizas este repositorio, cita el software y el modelo original de NetLogo."
+title: "Wolf Sheep Predation: efecto del número inicial de ovejas en la dinámica depredador-presa"
+abstract: >-
+  Análisis experimental del modelo Wolf Sheep Predation de NetLogo. El estudio
+  evalúa el efecto del número inicial de ovejas sobre la duración de la
+  simulación y la dinámica temporal de la población, usando experimentos de
+  BehaviorSpace, datos CSV y análisis reproducibles en R con tidyverse y
+  ggplot2. El archivo del modelo NetLogo conserva su licencia original
+  CC BY-NC-SA 3.0 y no está cubierto por la licencia MIT de este repositorio.
+authors:
+  - family-names: Rodríguez Franco
+    given-names: Juan David
+date-released: "2026-10-25"
+license: MIT
+license-url: "https://github.com/juandrodriguezf/wolf-sheep-predation-netlogo/blob/master/LICENSE"
+repository-code: "https://github.com/juandrodriguezf/wolf-sheep-predation-netlogo"
+url: "https://github.com/juandrodriguezf/wolf-sheep-predation-netlogo/blob/master/wolf_sheep/WolfSheep_Informe.md"
+version: "1.0.0"
+keywords:
+  - netlogo
+  - agent-based modeling
+  - predator-prey
+  - wolf sheep predation
+  - behaviorspace
+  - simulation
+  - R
+  - tidyverse
+references:
+  - type: software
+    title: "NetLogo Wolf Sheep Predation model"
+    authors:
+      - family-names: Wilensky
+        given-names: Uri
+    year: "1997"
+    url: "http://ccl.northwestern.edu/netlogo/models/WolfSheepPredation"
+    license: CC-BY-NC-SA-3.0
+    license-url: "https://creativecommons.org/licenses/by-nc-sa/3.0/"
+    publisher:
+      name: "Center for Connected Learning and Computer-Based Modeling, Northwestern University"
