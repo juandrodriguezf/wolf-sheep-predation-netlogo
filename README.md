@@ -6,7 +6,7 @@ en **R** con `tidyverse` y `ggplot2` desde notebooks de Colab.
 
 **Curso:** Teoría de la Computación
 **Autor:** Juan David Rodríguez Franco
-**Repositorio:** https://github.com/juandrodriguezf/proyecto_netlogo
+**Repositorio:** https://github.com/juandrodriguezf/wolf-sheep-predation-netlogo
 
 ---
 
@@ -130,7 +130,7 @@ Experimento evolutivo (wolfsheep_evol)
 3. Exportar los resultados como CSV de tabla y reemplazar los archivos de `wolf_sheep/`.
 4. Abrir los notebooks en Colab (kernel R) y ejecutar todas las celdas.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/juandrodriguezf/proyecto_netlogo/blob/master/wolf_sheep/WolfSheep_PostMortem.ipynb)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/juandrodriguezf/proyecto_netlogo/blob/master/wolf_sheep/WolfSheep_Evolutivo.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/juandrodriguezf/wolf-sheep-predation-netlogo/blob/master/wolf_sheep/WolfSheep_PostMortem.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/juandrodriguezf/wolf-sheep-predation-netlogo/blob/master/wolf_sheep/WolfSheep_Evolutivo.ipynb)
 
 Los notebooks leen los CSV directamente desde la rama `master` mediante URLs raw de GitHub.

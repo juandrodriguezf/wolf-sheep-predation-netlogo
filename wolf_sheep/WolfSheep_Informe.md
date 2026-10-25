@@ -201,4 +201,4 @@ La metodología de Helechos Básico se replica exitosamente. El parámetro `num-
 
 ---
 
-*Documento generado como parte del proyecto de Teoría de la Computación. Repositorio: https://github.com/juandrodriguezf/proyecto_netlogo*
+*Documento generado como parte del proyecto de Teoría de la Computación. Repositorio: https://github.com/juandrodriguezf/wolf-sheep-predation-netlogo*
